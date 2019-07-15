@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/排序算法/" class="article-date">
+  <time datetime="2019-07-15T06:19:54.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/排序算法/">排序算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
+<h3 id="算法步骤："><a href="#算法步骤：" class="headerlink" title="算法步骤："></a>算法步骤：</h3><p>1.将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。<br>2.从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,84,16,78,34,21,47,93,52,56,83,26]</span><br><span class="line">    for(let i=1;i&lt;arr.length;i++)&#123;</span><br><span class="line">        if(arr[i]&lt;arr[i-1])&#123;</span><br><span class="line">            let x = arr[i];</span><br><span class="line">            arr[i] = arr[i-1]</span><br><span class="line">            let j = i-1;</span><br><span class="line">            while(x&lt;arr[j])&#123;</span><br><span class="line">                arr[j+1] = arr[j]</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            arr[j+1] = x;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(arr);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h2><p>在要排序的一组数中，选出最小（或者最大）的一个数与第1个位置的数交换；然后在剩下的数当中再找最小（或者最大）的与第2个位置的数交换，依次类推，直到第n-1个元素（倒数第二个数）和第n个元素（最后一个数）比较为止。</p>
+<h3 id="算法步骤：-1"><a href="#算法步骤：-1" class="headerlink" title="算法步骤："></a>算法步骤：</h3><p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。<br>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。<br>重复第二步，直到所有元素均排序完毕。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,84,16,78,34,21,47,93,52,56,83,26]</span><br><span class="line">    for(let i=0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">        let k = arr[i];</span><br><span class="line">        let l = i;</span><br><span class="line">        for(let j=i;j&lt;arr.length-1;j++)&#123;</span><br><span class="line">            if(k&gt;arr[j+1]) &#123;</span><br><span class="line">                k=arr[j+1];</span><br><span class="line">                l=j+1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr,i,l);</span><br><span class="line">        console.log(arr)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="冒泡排序："><a href="#冒泡排序：" class="headerlink" title="冒泡排序："></a>冒泡排序：</h2><p>冒泡排序（Bubble Sort）也是一种简单直观的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<h3 id="算法步骤：-2"><a href="#算法步骤：-2" class="headerlink" title="算法步骤："></a>算法步骤：</h3><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。<br>针对所有的元素重复以上的步骤，除了最后一个。<br>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,84,16,78,34,21,47,93,52,56,83,26]</span><br><span class="line">    for(let i=0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">        for(let j=0;j&lt;arr.length-i;j++)&#123;</span><br><span class="line">            if(arr[j]&gt;arr[j+1])&#123;</span><br><span class="line">                let temp = arr[j]</span><br><span class="line">                arr[j] = arr[j+1]</span><br><span class="line">                arr[j+1] = temp</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(arr);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/排序算法/" data-id="cjy4065xu0002b8wcqm0uumma" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-洗牌算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/洗牌算法/" class="article-date">
+  <time datetime="2019-07-15T06:15:08.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/洗牌算法/">洗牌算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是洗牌算法"><a href="#什么是洗牌算法" class="headerlink" title="什么是洗牌算法"></a>什么是洗牌算法</h2><p>所谓洗牌算法，就是给你一个1到n的序列，让你随机打乱，保证每个数出现在任意一个位置的概率相同，也就是说在n!个的排列中，每一个排列出现的概率相同。</p>
+<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>每次随机选出一个没有被选过的数放到一个队列中，如果随机出来的数已经被选过，那么继续随机直到遇到一个没有被选过的数放入到队列中；重复这样子操作直到所有的数都被选择出来。<br>首先选第一个数的时候有n个数可选，第2个数的时候有(n-1)个数可选，—–这样子看来我们的排列有n(n-1)(n-2)—–1种，也就是我们最后选出来的排列是n!的排列中的任意一个，这样子显然是符合随机洗牌的要求的。<br>但是我们反观该方法的时间复杂度，由于我们每次随机选出一个数都有可能是之前选过的数，需要进行再次随机，因此对选出一个数的随机平均情况下需要随机O(n)次，因此该方法的时间复杂度是O(n^2)的。而且另外还要记一个队列，甚至需要记一个数是否被选出来过，因此该最朴素的做法的时间和空间复杂度都不是最好的，我们需要考虑更好的办法。</p>
+<h2 id="取出交换解法"><a href="#取出交换解法" class="headerlink" title="取出交换解法"></a>取出交换解法</h2><p>用交换位置的办法，每次从余下的牌堆中随机取出一张牌放到牌堆尾，即与牌堆最后一张牌交换位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function shuffle(num)&#123;</span><br><span class="line">    let poker = [];</span><br><span class="line">    for(let i=1;i&lt;=num;i++)&#123;</span><br><span class="line">        poker.push(i)</span><br><span class="line">    &#125;</span><br><span class="line">    for (let j=poker.length;j&gt;0;j--)&#123;</span><br><span class="line">        let select = rand(j);</span><br><span class="line">        swap(poker,select-1,j-1);</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(poker)</span><br><span class="line">    return poker;</span><br><span class="line">&#125;</span><br><span class="line">var rand = (function()&#123;</span><br><span class="line">    var seed = (new Date()).getTime()</span><br><span class="line">    function r()&#123;</span><br><span class="line">        seed = (seed*9301+49297)%233280</span><br><span class="line">        return seed/(233280.0)</span><br><span class="line">    &#125;</span><br><span class="line">    return function(number)&#123;</span><br><span class="line">        return Math.ceil(r()*number)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line">function swap(arr,first,second)&#123;</span><br><span class="line">    let temp = arr[first]</span><br><span class="line">    arr[first] = arr[second]</span><br><span class="line">    arr[second] = temp;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line">shuffle(54);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/洗牌算法/" data-id="cjy4065xz0005b8wczayyc36i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/hexo入门/" class="article-date">
+  <time datetime="2019-07-15T05:54:15.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/hexo入门/">hexo入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
+<li><p>创建新文章<br><code>hexo new post title</code></p>
+</li>
+<li><p>本地运行<br><code>hexo s</code></p>
+</li>
+<li><p>生成静态文件<br><code>hexo g</code></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/hexo入门/" data-id="cjy4065xx0004b8wc69eev7tp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/hello-world/" class="article-date">
+  <time datetime="2019-07-15T05:35:25.765Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/hello-world/" data-id="cjy4065xo0000b8wcccrvi67p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/15/排序算法/">排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/15/洗牌算法/">洗牌算法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/15/hexo入门/">hexo入门</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/15/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
