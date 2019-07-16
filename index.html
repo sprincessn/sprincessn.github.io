@@ -93,6 +93,9 @@
   };
 </script>
 
+<link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.15.8/styles/vs2015.min.css">
+<script src="//cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+
 
 
   <meta property="og:type" content="website">
@@ -311,6 +314,260 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/Vue全局调用对话框/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="spn">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/16/Vue全局调用对话框/" class="post-title-link" itemprop="url">Vue全局调用对话框</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-16 15:21:33 / 修改时间：18:19:53" itemprop="dateCreated datePublished" datetime="2019-07-16T15:21:33+08:00">2019-07-16</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="&#x4ECA;&#x5929;&#x9605;&#x8BFB;&#x4E86;&#x4E00;&#x4E9B;&#x6587;&#x7AE0;&#xFF0C;&#x5B8C;&#x6210;&#x5B9E;&#x73B0;&#x4E86;&#x7C7B;&#x4F3C;&#x4E8E;elementUI&#x4E0B;message&#x7EC4;&#x4EF6;-message&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x7684;&#x63D2;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7C7B;&#x4F3C;&#x7684;&#x547D;&#x4EE4;&#x5728;vue&#x5B9E;&#x4F8B;&#x4E2D;&#x5168;&#x5C40;&#x8C03;&#x7528;&#x3002;"><a href="#&#x4ECA;&#x5929;&#x9605;&#x8BFB;&#x4E86;&#x4E00;&#x4E9B;&#x6587;&#x7AE0;&#xFF0C;&#x5B8C;&#x6210;&#x5B9E;&#x73B0;&#x4E86;&#x7C7B;&#x4F3C;&#x4E8E;elementUI&#x4E0B;message&#x7EC4;&#x4EF6;-message&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x7684;&#x63D2;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7C7B;&#x4F3C;&#x7684;&#x547D;&#x4EE4;&#x5728;vue&#x5B9E;&#x4F8B;&#x4E2D;&#x5168;&#x5C40;&#x8C03;&#x7528;&#x3002;" class="headerlink" title="&#x4ECA;&#x5929;&#x9605;&#x8BFB;&#x4E86;&#x4E00;&#x4E9B;&#x6587;&#x7AE0;&#xFF0C;&#x5B8C;&#x6210;&#x5B9E;&#x73B0;&#x4E86;&#x7C7B;&#x4F3C;&#x4E8E;elementUI&#x4E0B;message&#x7EC4;&#x4EF6;$message&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x7684;&#x63D2;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7C7B;&#x4F3C;&#x7684;&#x547D;&#x4EE4;&#x5728;vue&#x5B9E;&#x4F8B;&#x4E2D;&#x5168;&#x5C40;&#x8C03;&#x7528;&#x3002;"></a>&#x4ECA;&#x5929;&#x9605;&#x8BFB;&#x4E86;&#x4E00;&#x4E9B;&#x6587;&#x7AE0;&#xFF0C;&#x5B8C;&#x6210;&#x5B9E;&#x73B0;&#x4E86;&#x7C7B;&#x4F3C;&#x4E8E;elementUI&#x4E0B;message&#x7EC4;&#x4EF6;<code>$message</code>&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x7684;&#x63D2;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7C7B;&#x4F3C;&#x7684;&#x547D;&#x4EE4;&#x5728;vue&#x5B9E;&#x4F8B;&#x4E2D;&#x5168;&#x5C40;&#x8C03;&#x7528;&#x3002;</h4><h4 id="&#x5177;&#x4F53;&#x6548;&#x679C;&#x5982;&#x4E0B;"><a href="#&#x5177;&#x4F53;&#x6548;&#x679C;&#x5982;&#x4E0B;" class="headerlink" title="&#x5177;&#x4F53;&#x6548;&#x679C;&#x5982;&#x4E0B;"></a>&#x5177;&#x4F53;&#x6548;&#x679C;&#x5982;&#x4E0B;</h4><p><img src="/2019/07/16/Vue&#x5168;&#x5C40;&#x8C03;&#x7528;&#x5BF9;&#x8BDD;&#x6846;/001.png" alt></p>
+<h4 id="&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x662F;&#x6CE8;&#x518C;Vue&#x5168;&#x5C40;&#x63D2;&#x4EF6;&#xFF01;&#x66B4;&#x9732;install&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x63D2;&#x4EF6;&#x4E2D;&#x5728;-vue-prototype&#x4E0A;&#x6CE8;&#x518C;&#x65B9;&#x6CD5;-showMsgBox&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x65B9;&#x6CD5;&#x53BB;&#x8C03;&#x53D6;"><a href="#&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x662F;&#x6CE8;&#x518C;Vue&#x5168;&#x5C40;&#x63D2;&#x4EF6;&#xFF01;&#x66B4;&#x9732;install&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x63D2;&#x4EF6;&#x4E2D;&#x5728;-vue-prototype&#x4E0A;&#x6CE8;&#x518C;&#x65B9;&#x6CD5;-showMsgBox&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x65B9;&#x6CD5;&#x53BB;&#x8C03;&#x53D6;" class="headerlink" title="&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x662F;&#x6CE8;&#x518C;Vue&#x5168;&#x5C40;&#x63D2;&#x4EF6;&#xFF01;&#x66B4;&#x9732;install&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x63D2;&#x4EF6;&#x4E2D;&#x5728; vue.prototype&#x4E0A;&#x6CE8;&#x518C;&#x65B9;&#x6CD5;$showMsgBox&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x65B9;&#x6CD5;&#x53BB;&#x8C03;&#x53D6;"></a>&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x662F;&#x6CE8;&#x518C;Vue&#x5168;&#x5C40;&#x63D2;&#x4EF6;&#xFF01;&#x66B4;&#x9732;install&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x63D2;&#x4EF6;&#x4E2D;&#x5728; <code>vue.prototype</code>&#x4E0A;&#x6CE8;&#x518C;&#x65B9;&#x6CD5;$showMsgBox&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x65B9;&#x6CD5;&#x53BB;&#x8C03;&#x53D6;</h4><h4 id="&#x521B;&#x5EFA;msgBox-vue&#x7EC4;&#x4EF6;&#xFF0C;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x53CA;&#x65B9;&#x6CD5;&#x7B49;&#x3002;"><a href="#&#x521B;&#x5EFA;msgBox-vue&#x7EC4;&#x4EF6;&#xFF0C;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x53CA;&#x65B9;&#x6CD5;&#x7B49;&#x3002;" class="headerlink" title="&#x521B;&#x5EFA;msgBox.vue&#x7EC4;&#x4EF6;&#xFF0C;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x53CA;&#x65B9;&#x6CD5;&#x7B49;&#x3002;"></a>&#x521B;&#x5EFA;<code>msgBox.vue</code>&#x7EC4;&#x4EF6;&#xFF0C;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x53CA;&#x65B9;&#x6CD5;&#x7B49;&#x3002;</h4><h4 id="&#x518D;&#x7528;Vue-extend&#x5168;&#x5C40;&#x547D;&#x4EE4;&#xFF0C;&#x6CE8;&#x518C;msgBox&#x7EC4;&#x4EF6;&#x5E76;&#x901A;&#x8FC7;document-body-append&#x5C06;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5230;&#x9875;&#x9762;&#x4E0A;&#x5C55;&#x793A;&#x3002;"><a href="#&#x518D;&#x7528;Vue-extend&#x5168;&#x5C40;&#x547D;&#x4EE4;&#xFF0C;&#x6CE8;&#x518C;msgBox&#x7EC4;&#x4EF6;&#x5E76;&#x901A;&#x8FC7;document-body-append&#x5C06;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5230;&#x9875;&#x9762;&#x4E0A;&#x5C55;&#x793A;&#x3002;" class="headerlink" title="&#x518D;&#x7528;Vue.extend&#x5168;&#x5C40;&#x547D;&#x4EE4;&#xFF0C;&#x6CE8;&#x518C;msgBox&#x7EC4;&#x4EF6;&#x5E76;&#x901A;&#x8FC7;document.body.append&#x5C06;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5230;&#x9875;&#x9762;&#x4E0A;&#x5C55;&#x793A;&#x3002;"></a>&#x518D;&#x7528;<code>Vue.extend</code>&#x5168;&#x5C40;&#x547D;&#x4EE4;&#xFF0C;&#x6CE8;&#x518C;msgBox&#x7EC4;&#x4EF6;&#x5E76;&#x901A;&#x8FC7;<code>document.body.append</code>&#x5C06;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5230;&#x9875;&#x9762;&#x4E0A;&#x5C55;&#x793A;&#x3002;</h4><h2 id="MsgBox&#x7EC4;&#x4EF6;"><a href="#MsgBox&#x7EC4;&#x4EF6;" class="headerlink" title="MsgBox&#x7EC4;&#x4EF6;"></a>MsgBox&#x7EC4;&#x4EF6;</h2><pre><code>&lt;template&gt;
+  &lt;div class=&quot;message-box&quot; v-show=&quot;isShowMessageBox&quot;&gt;
+      &lt;div class=&quot;mask&quot; @click=&quot;closeMsgBox&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;message-content&quot;&gt;
+          &lt;h3&gt;{{title}}&lt;/h3&gt;
+          &lt;p&gt;{{content}}&lt;/p&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+        isShowMessageBox:true,
+    }
+  },
+  props:{
+      title:{
+          type:String,
+          default:&apos;&#x8FD9;&#x91CC;&#x662F;&#x6807;&#x9898;&apos;,
+      },
+      content:{
+          type:String,
+          default: &apos;&#x8FD9;&#x91CC;&#x662F;&#x5185;&#x5BB9;&apos;
+      }
+  },
+  methods: {
+      closeMsgBox(){
+          this.isShowMessageBox = false;
+      },
+  },
+  components: {
+
+  }
+}
+&lt;/script&gt;
+
+&lt;style lang=&quot;scss&quot;&gt;
+    .message-box{
+        position: relative;
+        .mask{
+            position: fixed; 
+            top: 0;       //&#x901A;&#x8FC7;top,left,bottom,right&#x7684;&#x8BBE;&#x7F6E; &#x4F7F;&#x906E;&#x76D6;&#x5C42;&#x8986;&#x76D6;&#x5168;&#x9875;&#x9762;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 50000;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .message-content{
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            padding:20px 60px;
+            z-index: 50001;
+            background: #ffffff;
+        }
+    }
+&lt;/style&gt;</code></pre><h2 id="Vue&#x63D2;&#x4EF6;"><a href="#Vue&#x63D2;&#x4EF6;" class="headerlink" title="Vue&#x63D2;&#x4EF6;"></a>Vue&#x63D2;&#x4EF6;</h2><h4 id="&#x63D2;&#x4EF6;&#x901A;&#x5E38;&#x7528;&#x6765;&#x4E3A;-Vue-&#x6DFB;&#x52A0;&#x5168;&#x5C40;&#x529F;&#x80FD;&#x3002;&#x63D2;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#x8303;&#x56F4;&#x6CA1;&#x6709;&#x4E25;&#x683C;&#x7684;&#x9650;&#x5236;&#x2014;&#x2014;&#x4E00;&#x822C;&#x6709;&#x4E0B;&#x9762;&#x51E0;&#x79CD;&#xFF1A;"><a href="#&#x63D2;&#x4EF6;&#x901A;&#x5E38;&#x7528;&#x6765;&#x4E3A;-Vue-&#x6DFB;&#x52A0;&#x5168;&#x5C40;&#x529F;&#x80FD;&#x3002;&#x63D2;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#x8303;&#x56F4;&#x6CA1;&#x6709;&#x4E25;&#x683C;&#x7684;&#x9650;&#x5236;&#x2014;&#x2014;&#x4E00;&#x822C;&#x6709;&#x4E0B;&#x9762;&#x51E0;&#x79CD;&#xFF1A;" class="headerlink" title="&#x63D2;&#x4EF6;&#x901A;&#x5E38;&#x7528;&#x6765;&#x4E3A; Vue &#x6DFB;&#x52A0;&#x5168;&#x5C40;&#x529F;&#x80FD;&#x3002;&#x63D2;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#x8303;&#x56F4;&#x6CA1;&#x6709;&#x4E25;&#x683C;&#x7684;&#x9650;&#x5236;&#x2014;&#x2014;&#x4E00;&#x822C;&#x6709;&#x4E0B;&#x9762;&#x51E0;&#x79CD;&#xFF1A;"></a>&#x63D2;&#x4EF6;&#x901A;&#x5E38;&#x7528;&#x6765;&#x4E3A; Vue &#x6DFB;&#x52A0;&#x5168;&#x5C40;&#x529F;&#x80FD;&#x3002;&#x63D2;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#x8303;&#x56F4;&#x6CA1;&#x6709;&#x4E25;&#x683C;&#x7684;&#x9650;&#x5236;&#x2014;&#x2014;&#x4E00;&#x822C;&#x6709;&#x4E0B;&#x9762;&#x51E0;&#x79CD;&#xFF1A;</h4><p>1.&#x6DFB;&#x52A0;&#x5168;&#x5C40;&#x65B9;&#x6CD5;&#x6216;&#x8005;&#x5C5E;&#x6027;&#x3002;&#x5982;: vue-custom-element</p>
+<p>2.&#x6DFB;&#x52A0;&#x5168;&#x5C40;&#x8D44;&#x6E90;&#xFF1A;&#x6307;&#x4EE4;/&#x8FC7;&#x6EE4;&#x5668;/&#x8FC7;&#x6E21;&#x7B49;&#x3002;&#x5982; vue-touch</p>
+<p>3.&#x901A;&#x8FC7;&#x5168;&#x5C40;&#x6DF7;&#x5165;&#x6765;&#x6DFB;&#x52A0;&#x4E00;&#x4E9B;&#x7EC4;&#x4EF6;&#x9009;&#x9879;&#x3002;&#x5982; vue-router</p>
+<p>4.&#x6DFB;&#x52A0; Vue &#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;&#x628A;&#x5B83;&#x4EEC;&#x6DFB;&#x52A0;&#x5230; Vue.prototype &#x4E0A;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>5.&#x4E00;&#x4E2A;&#x5E93;&#xFF0C;&#x63D0;&#x4F9B;&#x81EA;&#x5DF1;&#x7684; API&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x529F;&#x80FD;&#x3002;&#x5982; vue-router</p>
+<h4 id="&#x63D2;&#x4EF6;&#x901A;&#x8FC7;&#x5168;&#x5C40;&#x65B9;&#x6CD5;-Vue-use-&#x4F7F;&#x7528;&#x63D2;&#x4EF6;&#x3002;&#x5B83;&#x9700;&#x8981;&#x5728;&#x4F60;&#x8C03;&#x7528;-new-Vue-&#x542F;&#x52A8;&#x5E94;&#x7528;&#x4E4B;&#x524D;&#x5B8C;&#x6210;&#xFF1A;"><a href="#&#x63D2;&#x4EF6;&#x901A;&#x8FC7;&#x5168;&#x5C40;&#x65B9;&#x6CD5;-Vue-use-&#x4F7F;&#x7528;&#x63D2;&#x4EF6;&#x3002;&#x5B83;&#x9700;&#x8981;&#x5728;&#x4F60;&#x8C03;&#x7528;-new-Vue-&#x542F;&#x52A8;&#x5E94;&#x7528;&#x4E4B;&#x524D;&#x5B8C;&#x6210;&#xFF1A;" class="headerlink" title="&#x63D2;&#x4EF6;&#x901A;&#x8FC7;&#x5168;&#x5C40;&#x65B9;&#x6CD5; Vue.use() &#x4F7F;&#x7528;&#x63D2;&#x4EF6;&#x3002;&#x5B83;&#x9700;&#x8981;&#x5728;&#x4F60;&#x8C03;&#x7528; new Vue() &#x542F;&#x52A8;&#x5E94;&#x7528;&#x4E4B;&#x524D;&#x5B8C;&#x6210;&#xFF1A;"></a>&#x63D2;&#x4EF6;&#x901A;&#x8FC7;&#x5168;&#x5C40;&#x65B9;&#x6CD5; Vue.use() &#x4F7F;&#x7528;&#x63D2;&#x4EF6;&#x3002;&#x5B83;&#x9700;&#x8981;&#x5728;&#x4F60;&#x8C03;&#x7528; new Vue() &#x542F;&#x52A8;&#x5E94;&#x7528;&#x4E4B;&#x524D;&#x5B8C;&#x6210;&#xFF1A;</h4><p>`<br>// main.js<br>// &#x5728;&#x4E3B;&#x9875;&#x9762;&#x5165;&#x53E3;&#x6587;&#x4EF6;main.js&#x4E2D;&#x8C03;&#x7528; MyPlugin.install(Vue)</p>
+<p>import MessageBox from &#x2018;./components/MsgBox/index&#x2019; //&#x8FD9;&#x91CC;&#x662F;&#x5F15;&#x5165;&#x63D2;&#x4EF6;&#x7684;&#x5165;&#x53E3;&#x6587;&#x4EF6;<br>                                    //&#x9700;&#x8981;&#x5165;&#x53E3;&#x6587;&#x4EF6; export default&#x6765;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;<br>Vue.use(MessageBox);</p>
+<p>new Vue({<br>  // &#x2026;&#x7EC4;&#x4EF6;&#x9009;&#x9879;<br>})<br>`</p>
+<h4 id="Vue-js-&#x7684;&#x63D2;&#x4EF6;&#x5E94;&#x8BE5;&#x66B4;&#x9732;&#x4E00;&#x4E2A;-install-&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;-Vue-&#x6784;&#x9020;&#x5668;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#xFF1A;"><a href="#Vue-js-&#x7684;&#x63D2;&#x4EF6;&#x5E94;&#x8BE5;&#x66B4;&#x9732;&#x4E00;&#x4E2A;-install-&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;-Vue-&#x6784;&#x9020;&#x5668;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#xFF1A;" class="headerlink" title="Vue.js &#x7684;&#x63D2;&#x4EF6;&#x5E94;&#x8BE5;&#x66B4;&#x9732;&#x4E00;&#x4E2A; install &#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F; Vue &#x6784;&#x9020;&#x5668;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#xFF1A;"></a>Vue.js &#x7684;&#x63D2;&#x4EF6;&#x5E94;&#x8BE5;&#x66B4;&#x9732;&#x4E00;&#x4E2A; install &#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F; Vue &#x6784;&#x9020;&#x5668;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#xFF1A;</h4><p>`<br>//index.js<br>import Vue from &#x2018;vue&#x2019; //&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x5F15;&#x5165;Vue<br>import msgboxVue from &#x2018;./MsgBox&#x2019;</p>
+<p>const MessageBox = {};</p>
+<p>MessageBox.install = function(Vue,options){ //install&#x65B9;&#x6CD5;&#x4F20;&#x53C2; vue&#x6784;&#x9020;&#x5668;&#x548C;options<br>    const MessageBoxInstance = Vue.extend(msgboxVue); // &#x8FD9;&#x4E00;&#x6B65;&#x901A;&#x8FC7;Vue.extend&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x201C;&#x5B50;&#x7C7B;&#x201D;&#x3002;<br>    let currentMsg;<br>    const initInstance = () =&gt; {   //&#x521B;&#x5EFA;&#x4E00;&#x4E2A;function&#x751F;&#x6210;vue&#x7EC4;&#x4EF6;&#x5E76;&#x5C06;&#x5176;&#x8282;&#x70B9;&#x6302;&#x8F7D;&#x5230;body&#x4E0A;<br>      // &#x5B9E;&#x4F8B;&#x5316;vue&#x5B9E;&#x4F8B;<br>      currentMsg = new MessageBoxInstance();<br>      let msgBoxEl = currentMsg.$mount(); //&#x901A;&#x8FC7;vm.$mount()&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x5E76;&#x4E0D;&#x63D0;&#x4F9B;&#x53C2;&#x6570;&#x5373;&#x6302;&#x8F7D;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x518D;&#x901A;&#x8FC7;&#x83B7;&#x53D6;&#x865A;&#x62DF;&#x8282;&#x70B9;&#x7528;&#x539F;&#x751F;js&#x6302;&#x8F7D;&#x5230;body&#x4E0A;&#x3002;<br>      document.body.appendChild(msgBoxEl.$el); //&#x6302;&#x8F7D;&#x5230;body<br>    };</p>
+<pre><code>Vue.prototype.$msgBox = { //&#x6CE8;&#x518C;Vue.prototype&#x4E0A;&#x5168;&#x5C40;&#x65B9;&#x6CD5;
+    showMsgBox(options){
+        initInstance(); //&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x5728;body&#x4E0A;&#x521B;&#x5EFA;vue&#x7EC4;&#x4EF6;&#x3002;
+    }
+}</code></pre><p>}</p>
+<p>export default MessageBox; //&#x901A;&#x8FC7;export default &#x8F93;&#x51FA;MessageBox&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x66B4;&#x9732;&#x4E86;install&#x65B9;&#x6CD5;&#x3002;</p>
+<p>`</p>
+<h2 id="Vue-extend"><a href="#Vue-extend" class="headerlink" title="Vue.extend"></a>Vue.extend</h2><p><code>Vue.extend</code> &#x5C5E;&#x4E8E; Vue &#x7684;&#x5168;&#x5C40; API&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x4E1A;&#x52A1;&#x5F00;&#x53D1;&#x4E2D;&#x6211;&#x4EEC;&#x5F88;&#x5C11;&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x76F8;&#x6BD4;&#x5E38;&#x7528;&#x7684; <code>Vue.component</code> &#x5199;&#x6CD5;&#x4F7F;&#x7528; <code>extend</code> &#x6B65;&#x9AA4;&#x8981;&#x66F4;&#x52A0;&#x7E41;&#x7410;&#x4E00;&#x4E9B;&#x3002;&#x4F46;&#x662F;&#x5728;&#x4E00;&#x4E9B;&#x72EC;&#x7ACB;&#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x573A;&#x666F;&#x4E2D;&#xFF0C;<code>Vue.extend + $mount</code> &#x8FD9;&#x5BF9;&#x7EC4;&#x5408;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x53BB;&#x5173;&#x6CE8;&#x7684;&#x3002;</p>
+<p>&#x5728; vue &#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E86;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6839;&#x5B9E;&#x4F8B;&#x540E;&#xFF0C;&#x6240;&#x6709;&#x9875;&#x9762;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;&#x901A;&#x8FC7; router &#x6765;&#x7BA1;&#x7406;&#xFF0C;&#x7EC4;&#x4EF6;&#x4E5F;&#x662F;&#x901A;&#x8FC7; import &#x6765;&#x8FDB;&#x884C;&#x5C40;&#x90E8;&#x6CE8;&#x518C;&#xFF0C;&#x6240;&#x4EE5;&#x7EC4;&#x4EF6;&#x7684;&#x521B;&#x5EFA;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x53BB;&#x5173;&#x6CE8;&#xFF0C;&#x76F8;&#x6BD4; extend &#x8981;&#x66F4;&#x7701;&#x5FC3;&#x4E00;&#x70B9;&#x70B9;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x505A;&#x4F1A;&#x6709;&#x51E0;&#x4E2A;&#x7F3A;&#x70B9;&#xFF1A;</p>
+<p>&#x7EC4;&#x4EF6;&#x6A21;&#x677F;&#x90FD;&#x662F;&#x4E8B;&#x5148;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x8981;&#x4ECE;&#x63A5;&#x53E3;&#x52A8;&#x6001;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x600E;&#x4E48;&#x529E;&#xFF1F;<br>&#x6240;&#x6709;&#x5185;&#x5BB9;&#x90FD;&#x662F;&#x5728; <code>#app</code> &#x4E0B;&#x6E32;&#x67D3;&#xFF0C;&#x6CE8;&#x518C;&#x7EC4;&#x4EF6;&#x90FD;&#x662F;&#x5728;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x6E32;&#x67D3;&#x3002;&#x5982;&#x679C;&#x6211;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E8E; <code>window.alert()</code> &#x63D0;&#x793A;&#x7EC4;&#x4EF6;&#x8981;&#x6C42;&#x50CF;&#x8C03;&#x7528; JS &#x51FD;&#x6570;&#x4E00;&#x6837;&#x8C03;&#x7528;&#x5B83;&#xFF0C;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#xFF1F;<br>&#x8FD9;&#x65F6;&#x5019;&#xFF0C;<code>Vue.extend + vm.$mount</code> &#x7EC4;&#x5408;&#x5C31;&#x6D3E;&#x4E0A;&#x7528;&#x573A;&#x4E86;&#x3002;</p>
+<h4 id="&#x6211;&#x4EEC;&#x7167;&#x7740;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;"><a href="#&#x6211;&#x4EEC;&#x7167;&#x7740;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;" class="headerlink" title="&#x6211;&#x4EEC;&#x7167;&#x7740;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;"></a>&#x6211;&#x4EEC;&#x7167;&#x7740;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;</h4><pre><code>import Vue from &apos;vue&apos;
+
+const testComponent = Vue.extend({
+  template: &apos;&lt;div&gt;{{ text }}&lt;/div&gt;&apos;,
+  data: function () {
+    return {
+      text: &apos;extend test&apos;
+    }
+  }
+})</code></pre><h4 id="&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x624B;&#x52A8;&#x6E32;&#x67D3;&#xFF1A;"><a href="#&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x624B;&#x52A8;&#x6E32;&#x67D3;&#xFF1A;" class="headerlink" title="&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x624B;&#x52A8;&#x6E32;&#x67D3;&#xFF1A;"></a>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x624B;&#x52A8;&#x6E32;&#x67D3;&#xFF1A;</h4><p><code>const extendComponent = new testComponent().$mount()</code></p>
+<h4 id="&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;-el-&#x5C5E;&#x6027;&#x6765;&#x8BBF;&#x95EE;-extendComponent-&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x5C06;&#x5176;&#x6E32;&#x67D3;&#x5230;&#x9875;&#x9762;&#x7684;body&#x4E0A;&#xFF1A;"><a href="#&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;-el-&#x5C5E;&#x6027;&#x6765;&#x8BBF;&#x95EE;-extendComponent-&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x5C06;&#x5176;&#x6E32;&#x67D3;&#x5230;&#x9875;&#x9762;&#x7684;body&#x4E0A;&#xFF1A;" class="headerlink" title="&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; $el &#x5C5E;&#x6027;&#x6765;&#x8BBF;&#x95EE; extendComponent &#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x5C06;&#x5176;&#x6E32;&#x67D3;&#x5230;&#x9875;&#x9762;&#x7684;body&#x4E0A;&#xFF1A;"></a>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; $el &#x5C5E;&#x6027;&#x6765;&#x8BBF;&#x95EE; extendComponent &#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x5C06;&#x5176;&#x6E32;&#x67D3;&#x5230;&#x9875;&#x9762;&#x7684;body&#x4E0A;&#xFF1A;</h4><p><code>document.body.appendChild(extendComponent.$el)</code></p>
+<h2 id="vm-mount"><a href="#vm-mount" class="headerlink" title="vm.mount"></a>vm.mount</h2><p><code>vm.$mount( [elementOrSelector] )</code></p>
+<h4 id="&#x8FD4;&#x56DE;&#x503C;&#xFF1A;vm-&#x793A;&#x4F8B;&#x672C;&#x8EAB;"><a href="#&#x8FD4;&#x56DE;&#x503C;&#xFF1A;vm-&#x793A;&#x4F8B;&#x672C;&#x8EAB;" class="headerlink" title="&#x8FD4;&#x56DE;&#x503C;&#xFF1A;vm - &#x793A;&#x4F8B;&#x672C;&#x8EAB;"></a>&#x8FD4;&#x56DE;&#x503C;&#xFF1A;<code>vm</code> - &#x793A;&#x4F8B;&#x672C;&#x8EAB;</h4><h4 id="&#x7528;&#x6CD5;&#xFF1A;&#x5982;&#x679C;-Vue-&#x5B9E;&#x4F8B;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x6CA1;&#x6709;&#x6536;&#x5230;-el-&#x9009;&#x9879;&#xFF0C;&#x5219;&#x5B83;&#x5904;&#x4E8E;&#x201C;&#x672A;&#x6302;&#x8F7D;&#x201D;&#x72B6;&#x6001;&#xFF0C;&#x6CA1;&#x6709;&#x5173;&#x8054;&#x7684;-DOM-&#x5143;&#x7D20;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;-vm-mount-&#x624B;&#x52A8;&#x5730;&#x6302;&#x8F7D;&#x4E00;&#x4E2A;&#x672A;&#x6302;&#x8F7D;&#x7684;&#x5B9E;&#x4F8B;&#x3002;"><a href="#&#x7528;&#x6CD5;&#xFF1A;&#x5982;&#x679C;-Vue-&#x5B9E;&#x4F8B;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x6CA1;&#x6709;&#x6536;&#x5230;-el-&#x9009;&#x9879;&#xFF0C;&#x5219;&#x5B83;&#x5904;&#x4E8E;&#x201C;&#x672A;&#x6302;&#x8F7D;&#x201D;&#x72B6;&#x6001;&#xFF0C;&#x6CA1;&#x6709;&#x5173;&#x8054;&#x7684;-DOM-&#x5143;&#x7D20;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;-vm-mount-&#x624B;&#x52A8;&#x5730;&#x6302;&#x8F7D;&#x4E00;&#x4E2A;&#x672A;&#x6302;&#x8F7D;&#x7684;&#x5B9E;&#x4F8B;&#x3002;" class="headerlink" title="&#x7528;&#x6CD5;&#xFF1A;&#x5982;&#x679C; Vue &#x5B9E;&#x4F8B;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x6CA1;&#x6709;&#x6536;&#x5230; el &#x9009;&#x9879;&#xFF0C;&#x5219;&#x5B83;&#x5904;&#x4E8E;&#x201C;&#x672A;&#x6302;&#x8F7D;&#x201D;&#x72B6;&#x6001;&#xFF0C;&#x6CA1;&#x6709;&#x5173;&#x8054;&#x7684; DOM &#x5143;&#x7D20;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; vm.$mount() &#x624B;&#x52A8;&#x5730;&#x6302;&#x8F7D;&#x4E00;&#x4E2A;&#x672A;&#x6302;&#x8F7D;&#x7684;&#x5B9E;&#x4F8B;&#x3002;"></a>&#x7528;&#x6CD5;&#xFF1A;&#x5982;&#x679C; Vue &#x5B9E;&#x4F8B;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x6CA1;&#x6709;&#x6536;&#x5230; el &#x9009;&#x9879;&#xFF0C;&#x5219;&#x5B83;&#x5904;&#x4E8E;&#x201C;&#x672A;&#x6302;&#x8F7D;&#x201D;&#x72B6;&#x6001;&#xFF0C;&#x6CA1;&#x6709;&#x5173;&#x8054;&#x7684; DOM &#x5143;&#x7D20;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; vm.$mount() &#x624B;&#x52A8;&#x5730;&#x6302;&#x8F7D;&#x4E00;&#x4E2A;&#x672A;&#x6302;&#x8F7D;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</h4><h4 id="&#x5982;&#x679C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;-elementOrSelector-&#x53C2;&#x6570;&#xFF0C;&#x6A21;&#x677F;&#x5C06;&#x88AB;&#x6E32;&#x67D3;&#x4E3A;&#x6587;&#x6863;&#x4E4B;&#x5916;&#x7684;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x4E14;&#x4F60;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x539F;&#x751F;-DOM-API-&#x628A;&#x5B83;&#x63D2;&#x5165;&#x6587;&#x6863;&#x4E2D;&#x3002;&#xFF08;&#x672C;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x7528;&#x5230;&#x7684;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF09;"><a href="#&#x5982;&#x679C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;-elementOrSelector-&#x53C2;&#x6570;&#xFF0C;&#x6A21;&#x677F;&#x5C06;&#x88AB;&#x6E32;&#x67D3;&#x4E3A;&#x6587;&#x6863;&#x4E4B;&#x5916;&#x7684;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x4E14;&#x4F60;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x539F;&#x751F;-DOM-API-&#x628A;&#x5B83;&#x63D2;&#x5165;&#x6587;&#x6863;&#x4E2D;&#x3002;&#xFF08;&#x672C;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x7528;&#x5230;&#x7684;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF09;" class="headerlink" title="&#x5982;&#x679C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B; elementOrSelector &#x53C2;&#x6570;&#xFF0C;&#x6A21;&#x677F;&#x5C06;&#x88AB;&#x6E32;&#x67D3;&#x4E3A;&#x6587;&#x6863;&#x4E4B;&#x5916;&#x7684;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x4E14;&#x4F60;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x539F;&#x751F; DOM API &#x628A;&#x5B83;&#x63D2;&#x5165;&#x6587;&#x6863;&#x4E2D;&#x3002;&#xFF08;&#x672C;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x7528;&#x5230;&#x7684;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF09;"></a>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B; elementOrSelector &#x53C2;&#x6570;&#xFF0C;&#x6A21;&#x677F;&#x5C06;&#x88AB;&#x6E32;&#x67D3;&#x4E3A;&#x6587;&#x6863;&#x4E4B;&#x5916;&#x7684;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x4E14;&#x4F60;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x539F;&#x751F; DOM API &#x628A;&#x5B83;&#x63D2;&#x5165;&#x6587;&#x6863;&#x4E2D;&#x3002;&#xFF08;&#x672C;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x7528;&#x5230;&#x7684;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF09;</h4><h4 id="&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x81EA;&#x8EAB;&#xFF0C;&#x56E0;&#x800C;&#x53EF;&#x4EE5;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x5176;&#x5B83;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x3002;"><a href="#&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x81EA;&#x8EAB;&#xFF0C;&#x56E0;&#x800C;&#x53EF;&#x4EE5;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x5176;&#x5B83;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x3002;" class="headerlink" title="&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x81EA;&#x8EAB;&#xFF0C;&#x56E0;&#x800C;&#x53EF;&#x4EE5;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x5176;&#x5B83;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x3002;"></a>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x81EA;&#x8EAB;&#xFF0C;&#x56E0;&#x800C;&#x53EF;&#x4EE5;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x5176;&#x5B83;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x3002;</h4><h4 id="&#x793A;&#x4F8B;&#xFF1A;"><a href="#&#x793A;&#x4F8B;&#xFF1A;" class="headerlink" title="&#x793A;&#x4F8B;&#xFF1A;"></a>&#x793A;&#x4F8B;&#xFF1A;</h4><pre><code>var MyComponent = Vue.extend({
+  template: &apos;&lt;div&gt;Hello!&lt;/div&gt;&apos;
+})
+
+// &#x521B;&#x5EFA;&#x5E76;&#x6302;&#x8F7D;&#x5230; #app (&#x4F1A;&#x66FF;&#x6362; #app)
+new MyComponent().$mount(&apos;#app&apos;)
+
+// &#x540C;&#x4E0A;
+new MyComponent({ el: &apos;#app&apos; })
+
+// &#x6216;&#x8005;&#xFF0C;&#x5728;&#x6587;&#x6863;&#x4E4B;&#x5916;&#x6E32;&#x67D3;&#x5E76;&#x4E14;&#x968F;&#x540E;&#x6302;&#x8F7D;
+var component = new MyComponent().$mount()
+document.getElementById(&apos;app&apos;).appendChild(component.$el)</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/排序算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -402,17 +659,48 @@
       
         
           
-            <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
-<h3 id="算法步骤："><a href="#算法步骤：" class="headerlink" title="算法步骤："></a>算法步骤：</h3><p>1.将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。<br>2.从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,84,16,78,34,21,47,93,52,56,83,26]</span><br><span class="line">    for(let i=1;i&lt;arr.length;i++)&#123;</span><br><span class="line">        if(arr[i]&lt;arr[i-1])&#123;</span><br><span class="line">            let x = arr[i];</span><br><span class="line">            arr[i] = arr[i-1]</span><br><span class="line">            let j = i-1;</span><br><span class="line">            while(x&lt;arr[j])&#123;</span><br><span class="line">                arr[j+1] = arr[j]</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            arr[j+1] = x;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(arr);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h2><p>在要排序的一组数中，选出最小（或者最大）的一个数与第1个位置的数交换；然后在剩下的数当中再找最小（或者最大）的与第2个位置的数交换，依次类推，直到第n-1个元素（倒数第二个数）和第n个元素（最后一个数）比较为止。</p>
-<h3 id="算法步骤：-1"><a href="#算法步骤：-1" class="headerlink" title="算法步骤："></a>算法步骤：</h3><p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。<br>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。<br>重复第二步，直到所有元素均排序完毕。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,84,16,78,34,21,47,93,52,56,83,26]</span><br><span class="line">    for(let i=0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">        let k = arr[i];</span><br><span class="line">        let l = i;</span><br><span class="line">        for(let j=i;j&lt;arr.length-1;j++)&#123;</span><br><span class="line">            if(k&gt;arr[j+1]) &#123;</span><br><span class="line">                k=arr[j+1];</span><br><span class="line">                l=j+1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr,i,l);</span><br><span class="line">        console.log(arr)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="冒泡排序："><a href="#冒泡排序：" class="headerlink" title="冒泡排序："></a>冒泡排序：</h2><p>冒泡排序（Bubble Sort）也是一种简单直观的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
-<h3 id="算法步骤：-2"><a href="#算法步骤：-2" class="headerlink" title="算法步骤："></a>算法步骤：</h3><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。<br>针对所有的元素重复以上的步骤，除了最后一个。<br>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,84,16,78,34,21,47,93,52,56,83,26]</span><br><span class="line">    for(let i=0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">        for(let j=0;j&lt;arr.length-i;j++)&#123;</span><br><span class="line">            if(arr[j]&gt;arr[j+1])&#123;</span><br><span class="line">                let temp = arr[j]</span><br><span class="line">                arr[j] = arr[j+1]</span><br><span class="line">                arr[j+1] = temp</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(arr);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+            <h2 id="&#x63D2;&#x5165;&#x6392;&#x5E8F;"><a href="#&#x63D2;&#x5165;&#x6392;&#x5E8F;" class="headerlink" title="&#x63D2;&#x5165;&#x6392;&#x5E8F;"></a>&#x63D2;&#x5165;&#x6392;&#x5E8F;</h2><p>&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x662F;&#x4E00;&#x79CD;&#x6700;&#x7B80;&#x5355;&#x76F4;&#x89C2;&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#xFF0C;&#x5B83;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x662F;&#x901A;&#x8FC7;&#x6784;&#x5EFA;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#xFF0C;&#x5BF9;&#x4E8E;&#x672A;&#x6392;&#x5E8F;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x5DF2;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x4E2D;&#x4ECE;&#x540E;&#x5411;&#x524D;&#x626B;&#x63CF;&#xFF0C;&#x627E;&#x5230;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x5E76;&#x63D2;&#x5165;&#x3002;</p>
+<h3 id="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;"><a href="#&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;" class="headerlink" title="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;"></a>&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;</h3><p>1.&#x5C06;&#x7B2C;&#x4E00;&#x5F85;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x770B;&#x505A;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#xFF0C;&#x628A;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5F53;&#x6210;&#x662F;&#x672A;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x3002;<br>2.&#x4ECE;&#x5934;&#x5230;&#x5C3E;&#x4F9D;&#x6B21;&#x626B;&#x63CF;&#x672A;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#xFF0C;&#x5C06;&#x626B;&#x63CF;&#x5230;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#x7684;&#x9002;&#x5F53;&#x4F4D;&#x7F6E;&#x3002;&#xFF08;&#x5982;&#x679C;&#x5F85;&#x63D2;&#x5165;&#x7684;&#x5143;&#x7D20;&#x4E0E;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#x76F8;&#x7B49;&#xFF0C;&#x5219;&#x5C06;&#x5F85;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x76F8;&#x7B49;&#x5143;&#x7D20;&#x7684;&#x540E;&#x9762;&#x3002;&#xFF09;</p>
+<pre><code>let arr = [2,84,16,78,34,21,47,93,52,56,83,26]
+    for(let i=1;i&lt;arr.length;i++){
+        if(arr[i]&lt;arr[i-1]){
+            let x = arr[i];
+            arr[i] = arr[i-1]
+            let j = i-1;
+            while(x&lt;arr[j]){
+                arr[j+1] = arr[j]
+                j--;
+            }
+            arr[j+1] = x;
+        }
+        console.log(arr);
+    }</code></pre><h2 id="&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;"><a href="#&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;" class="headerlink" title="&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;"></a>&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;</h2><p>&#x5728;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x4E00;&#x7EC4;&#x6570;&#x4E2D;&#xFF0C;&#x9009;&#x51FA;&#x6700;&#x5C0F;&#xFF08;&#x6216;&#x8005;&#x6700;&#x5927;&#xFF09;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x4E0E;&#x7B2C;1&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x4EA4;&#x6362;&#xFF1B;&#x7136;&#x540E;&#x5728;&#x5269;&#x4E0B;&#x7684;&#x6570;&#x5F53;&#x4E2D;&#x518D;&#x627E;&#x6700;&#x5C0F;&#xFF08;&#x6216;&#x8005;&#x6700;&#x5927;&#xFF09;&#x7684;&#x4E0E;&#x7B2C;2&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x4EA4;&#x6362;&#xFF0C;&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#xFF0C;&#x76F4;&#x5230;&#x7B2C;n-1&#x4E2A;&#x5143;&#x7D20;&#xFF08;&#x5012;&#x6570;&#x7B2C;&#x4E8C;&#x4E2A;&#x6570;&#xFF09;&#x548C;&#x7B2C;n&#x4E2A;&#x5143;&#x7D20;&#xFF08;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#xFF09;&#x6BD4;&#x8F83;&#x4E3A;&#x6B62;&#x3002;</p>
+<h3 id="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;-1"><a href="#&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;-1" class="headerlink" title="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;"></a>&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;</h3><p>&#x9996;&#x5148;&#x5728;&#x672A;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x4E2D;&#x627E;&#x5230;&#x6700;&#x5C0F;&#xFF08;&#x5927;&#xFF09;&#x5143;&#x7D20;&#xFF0C;&#x5B58;&#x653E;&#x5230;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x3002;<br>&#x518D;&#x4ECE;&#x5269;&#x4F59;&#x672A;&#x6392;&#x5E8F;&#x5143;&#x7D20;&#x4E2D;&#x7EE7;&#x7EED;&#x5BFB;&#x627E;&#x6700;&#x5C0F;&#xFF08;&#x5927;&#xFF09;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x653E;&#x5230;&#x5DF2;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x7684;&#x672B;&#x5C3E;&#x3002;<br>&#x91CD;&#x590D;&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x76F4;&#x5230;&#x6240;&#x6709;&#x5143;&#x7D20;&#x5747;&#x6392;&#x5E8F;&#x5B8C;&#x6BD5;&#x3002;</p>
+<pre><code>let arr = [2,84,16,78,34,21,47,93,52,56,83,26]
+    for(let i=0;i&lt;arr.length-1;i++){
+        let k = arr[i];
+        let l = i;
+        for(let j=i;j&lt;arr.length-1;j++){
+            if(k&gt;arr[j+1]) {
+                k=arr[j+1];
+                l=j+1;
+            }
+        }
+        swap(arr,i,l);
+        console.log(arr)
+    }</code></pre><h2 id="&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF1A;"><a href="#&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF1A;" class="headerlink" title="&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF1A;"></a>&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF1A;</h2><p>&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF08;Bubble Sort&#xFF09;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x76F4;&#x89C2;&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x3002;&#x5B83;&#x91CD;&#x590D;&#x5730;&#x8D70;&#x8BBF;&#x8FC7;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x6570;&#x5217;&#xFF0C;&#x4E00;&#x6B21;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5982;&#x679C;&#x4ED6;&#x4EEC;&#x7684;&#x987A;&#x5E8F;&#x9519;&#x8BEF;&#x5C31;&#x628A;&#x4ED6;&#x4EEC;&#x4EA4;&#x6362;&#x8FC7;&#x6765;&#x3002;&#x8D70;&#x8BBF;&#x6570;&#x5217;&#x7684;&#x5DE5;&#x4F5C;&#x662F;&#x91CD;&#x590D;&#x5730;&#x8FDB;&#x884C;&#x76F4;&#x5230;&#x6CA1;&#x6709;&#x518D;&#x9700;&#x8981;&#x4EA4;&#x6362;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8BE5;&#x6570;&#x5217;&#x5DF2;&#x7ECF;&#x6392;&#x5E8F;&#x5B8C;&#x6210;&#x3002;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x7684;&#x540D;&#x5B57;&#x7531;&#x6765;&#x662F;&#x56E0;&#x4E3A;&#x8D8A;&#x5C0F;&#x7684;&#x5143;&#x7D20;&#x4F1A;&#x7ECF;&#x7531;&#x4EA4;&#x6362;&#x6162;&#x6162;&#x201C;&#x6D6E;&#x201D;&#x5230;&#x6570;&#x5217;&#x7684;&#x9876;&#x7AEF;&#x3002;</p>
+<h3 id="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;-2"><a href="#&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;-2" class="headerlink" title="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;"></a>&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;</h3><p>&#x6BD4;&#x8F83;&#x76F8;&#x90BB;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x6BD4;&#x7B2C;&#x4E8C;&#x4E2A;&#x5927;&#xFF0C;&#x5C31;&#x4EA4;&#x6362;&#x4ED6;&#x4EEC;&#x4E24;&#x4E2A;&#x3002;<br>&#x5BF9;&#x6BCF;&#x4E00;&#x5BF9;&#x76F8;&#x90BB;&#x5143;&#x7D20;&#x4F5C;&#x540C;&#x6837;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4ECE;&#x5F00;&#x59CB;&#x7B2C;&#x4E00;&#x5BF9;&#x5230;&#x7ED3;&#x5C3E;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5BF9;&#x3002;&#x8FD9;&#x6B65;&#x505A;&#x5B8C;&#x540E;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x5143;&#x7D20;&#x4F1A;&#x662F;&#x6700;&#x5927;&#x7684;&#x6570;&#x3002;<br>&#x9488;&#x5BF9;&#x6240;&#x6709;&#x7684;&#x5143;&#x7D20;&#x91CD;&#x590D;&#x4EE5;&#x4E0A;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x9664;&#x4E86;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x3002;<br>&#x6301;&#x7EED;&#x6BCF;&#x6B21;&#x5BF9;&#x8D8A;&#x6765;&#x8D8A;&#x5C11;&#x7684;&#x5143;&#x7D20;&#x91CD;&#x590D;&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x76F4;&#x5230;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4E00;&#x5BF9;&#x6570;&#x5B57;&#x9700;&#x8981;&#x6BD4;&#x8F83;&#x3002;</p>
+<pre><code>let arr = [2,84,16,78,34,21,47,93,52,56,83,26]
+    for(let i=0;i&lt;arr.length-1;i++){
+        for(let j=0;j&lt;arr.length-i;j++){
+            if(arr[j]&gt;arr[j+1]){
+                let temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+            }
+        }
+        console.log(arr);
+    }</code></pre>
           
         
       
@@ -515,13 +803,23 @@
                 
               
 
-              <time title="创建时间：2019-07-15 14:15:08 / 修改时间：14:19:21" itemprop="dateCreated datePublished" datetime="2019-07-15T14:15:08+08:00">2019-07-15</time>
+              <time title="创建时间：2019-07-15 14:15:08" itemprop="dateCreated datePublished" datetime="2019-07-15T14:15:08+08:00">2019-07-15</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-16 17:51:05" itemprop="dateModified" datetime="2019-07-16T17:51:05+08:00">2019-07-16</time>
+              </span>
             
           
 
@@ -561,10 +859,38 @@
       
         
           
-            <h2 id="什么是洗牌算法"><a href="#什么是洗牌算法" class="headerlink" title="什么是洗牌算法"></a>什么是洗牌算法</h2><p>所谓洗牌算法，就是给你一个1到n的序列，让你随机打乱，保证每个数出现在任意一个位置的概率相同，也就是说在n!个的排列中，每一个排列出现的概率相同。</p>
-<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>每次随机选出一个没有被选过的数放到一个队列中，如果随机出来的数已经被选过，那么继续随机直到遇到一个没有被选过的数放入到队列中；重复这样子操作直到所有的数都被选择出来。<br>首先选第一个数的时候有n个数可选，第2个数的时候有(n-1)个数可选，—–这样子看来我们的排列有n(n-1)(n-2)—–1种，也就是我们最后选出来的排列是n!的排列中的任意一个，这样子显然是符合随机洗牌的要求的。<br>但是我们反观该方法的时间复杂度，由于我们每次随机选出一个数都有可能是之前选过的数，需要进行再次随机，因此对选出一个数的随机平均情况下需要随机O(n)次，因此该方法的时间复杂度是O(n^2)的。而且另外还要记一个队列，甚至需要记一个数是否被选出来过，因此该最朴素的做法的时间和空间复杂度都不是最好的，我们需要考虑更好的办法。</p>
-<h2 id="取出交换解法"><a href="#取出交换解法" class="headerlink" title="取出交换解法"></a>取出交换解法</h2><p>用交换位置的办法，每次从余下的牌堆中随机取出一张牌放到牌堆尾，即与牌堆最后一张牌交换位置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function shuffle(num)&#123;</span><br><span class="line">    let poker = [];</span><br><span class="line">    for(let i=1;i&lt;=num;i++)&#123;</span><br><span class="line">        poker.push(i)</span><br><span class="line">    &#125;</span><br><span class="line">    for (let j=poker.length;j&gt;0;j--)&#123;</span><br><span class="line">        let select = rand(j);</span><br><span class="line">        swap(poker,select-1,j-1);</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(poker)</span><br><span class="line">    return poker;</span><br><span class="line">&#125;</span><br><span class="line">var rand = (function()&#123;</span><br><span class="line">    var seed = (new Date()).getTime()</span><br><span class="line">    function r()&#123;</span><br><span class="line">        seed = (seed*9301+49297)%233280</span><br><span class="line">        return seed/(233280.0)</span><br><span class="line">    &#125;</span><br><span class="line">    return function(number)&#123;</span><br><span class="line">        return Math.ceil(r()*number)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line">function swap(arr,first,second)&#123;</span><br><span class="line">    let temp = arr[first]</span><br><span class="line">    arr[first] = arr[second]</span><br><span class="line">    arr[second] = temp;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line">shuffle(54);</span><br></pre></td></tr></table></figure>
+            <h2 id="&#x4EC0;&#x4E48;&#x662F;&#x6D17;&#x724C;&#x7B97;&#x6CD5;"><a href="#&#x4EC0;&#x4E48;&#x662F;&#x6D17;&#x724C;&#x7B97;&#x6CD5;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;&#x6D17;&#x724C;&#x7B97;&#x6CD5;"></a>&#x4EC0;&#x4E48;&#x662F;&#x6D17;&#x724C;&#x7B97;&#x6CD5;</h2><p>&#x6240;&#x8C13;&#x6D17;&#x724C;&#x7B97;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;1&#x5230;n&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x8BA9;&#x4F60;&#x968F;&#x673A;&#x6253;&#x4E71;&#xFF0C;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A;&#x6570;&#x51FA;&#x73B0;&#x5728;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x6982;&#x7387;&#x76F8;&#x540C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5728;n!&#x4E2A;&#x7684;&#x6392;&#x5217;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x6392;&#x5217;&#x51FA;&#x73B0;&#x7684;&#x6982;&#x7387;&#x76F8;&#x540C;&#x3002;</p>
+<h2 id="&#x7B97;&#x6CD5;&#x601D;&#x8DEF;"><a href="#&#x7B97;&#x6CD5;&#x601D;&#x8DEF;" class="headerlink" title="&#x7B97;&#x6CD5;&#x601D;&#x8DEF;"></a>&#x7B97;&#x6CD5;&#x601D;&#x8DEF;</h2><p>&#x6BCF;&#x6B21;&#x968F;&#x673A;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x88AB;&#x9009;&#x8FC7;&#x7684;&#x6570;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x968F;&#x673A;&#x51FA;&#x6765;&#x7684;&#x6570;&#x5DF2;&#x7ECF;&#x88AB;&#x9009;&#x8FC7;&#xFF0C;&#x90A3;&#x4E48;&#x7EE7;&#x7EED;&#x968F;&#x673A;&#x76F4;&#x5230;&#x9047;&#x5230;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x88AB;&#x9009;&#x8FC7;&#x7684;&#x6570;&#x653E;&#x5165;&#x5230;&#x961F;&#x5217;&#x4E2D;&#xFF1B;&#x91CD;&#x590D;&#x8FD9;&#x6837;&#x5B50;&#x64CD;&#x4F5C;&#x76F4;&#x5230;&#x6240;&#x6709;&#x7684;&#x6570;&#x90FD;&#x88AB;&#x9009;&#x62E9;&#x51FA;&#x6765;&#x3002;<br>&#x9996;&#x5148;&#x9009;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x65F6;&#x5019;&#x6709;n&#x4E2A;&#x6570;&#x53EF;&#x9009;&#xFF0C;&#x7B2C;2&#x4E2A;&#x6570;&#x7684;&#x65F6;&#x5019;&#x6709;(n-1)&#x4E2A;&#x6570;&#x53EF;&#x9009;&#xFF0C;&#x2014;&#x2013;&#x8FD9;&#x6837;&#x5B50;&#x770B;&#x6765;&#x6211;&#x4EEC;&#x7684;&#x6392;&#x5217;&#x6709;n(n-1)(n-2)&#x2014;&#x2013;1&#x79CD;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x6700;&#x540E;&#x9009;&#x51FA;&#x6765;&#x7684;&#x6392;&#x5217;&#x662F;n!&#x7684;&#x6392;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#xFF0C;&#x8FD9;&#x6837;&#x5B50;&#x663E;&#x7136;&#x662F;&#x7B26;&#x5408;&#x968F;&#x673A;&#x6D17;&#x724C;&#x7684;&#x8981;&#x6C42;&#x7684;&#x3002;<br>&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x53CD;&#x89C2;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x968F;&#x673A;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#x90FD;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x4E4B;&#x524D;&#x9009;&#x8FC7;&#x7684;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x518D;&#x6B21;&#x968F;&#x673A;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x968F;&#x673A;&#x5E73;&#x5747;&#x60C5;&#x51B5;&#x4E0B;&#x9700;&#x8981;&#x968F;&#x673A;O(n)&#x6B21;&#xFF0C;&#x56E0;&#x6B64;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;O(n^2)&#x7684;&#x3002;&#x800C;&#x4E14;&#x53E6;&#x5916;&#x8FD8;&#x8981;&#x8BB0;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x751A;&#x81F3;&#x9700;&#x8981;&#x8BB0;&#x4E00;&#x4E2A;&#x6570;&#x662F;&#x5426;&#x88AB;&#x9009;&#x51FA;&#x6765;&#x8FC7;&#xFF0C;&#x56E0;&#x6B64;&#x8BE5;&#x6700;&#x6734;&#x7D20;&#x7684;&#x505A;&#x6CD5;&#x7684;&#x65F6;&#x95F4;&#x548C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x4E0D;&#x662F;&#x6700;&#x597D;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8003;&#x8651;&#x66F4;&#x597D;&#x7684;&#x529E;&#x6CD5;&#x3002;</p>
+<h2 id="&#x53D6;&#x51FA;&#x4EA4;&#x6362;&#x89E3;&#x6CD5;"><a href="#&#x53D6;&#x51FA;&#x4EA4;&#x6362;&#x89E3;&#x6CD5;" class="headerlink" title="&#x53D6;&#x51FA;&#x4EA4;&#x6362;&#x89E3;&#x6CD5;"></a>&#x53D6;&#x51FA;&#x4EA4;&#x6362;&#x89E3;&#x6CD5;</h2><p>&#x7528;&#x4EA4;&#x6362;&#x4F4D;&#x7F6E;&#x7684;&#x529E;&#x6CD5;&#xFF0C;&#x6BCF;&#x6B21;&#x4ECE;&#x4F59;&#x4E0B;&#x7684;&#x724C;&#x5806;&#x4E2D;&#x968F;&#x673A;&#x53D6;&#x51FA;&#x4E00;&#x5F20;&#x724C;&#x653E;&#x5230;&#x724C;&#x5806;&#x5C3E;&#xFF0C;&#x5373;&#x4E0E;&#x724C;&#x5806;&#x6700;&#x540E;&#x4E00;&#x5F20;&#x724C;&#x4EA4;&#x6362;&#x4F4D;&#x7F6E;&#x3002;</p>
+<pre><code>function shuffle(num){
+    let poker = [];
+    for(let i=1;i&lt;=num;i++){
+        poker.push(i)
+    }
+    for (let j=poker.length;j&gt;0;j--){
+        let select = rand(j);
+        swap(poker,select-1,j-1);
+    }
+    console.log(poker)
+    return poker;
+}
+var rand = (function(){
+    var seed = (new Date()).getTime()
+    function r(){
+        seed = (seed*9301+49297)%233280
+        return seed/(233280.0)
+    }
+    return function(number){
+        return Math.ceil(r()*number)
+    }
+})()
+function swap(arr,first,second){
+    let temp = arr[first]
+    arr[first] = arr[second]
+    arr[second] = temp;
+    return arr;
+}
+shuffle(54);</code></pre>
           
         
       
@@ -667,13 +993,23 @@
                 
               
 
-              <time title="创建时间：2019-07-15 13:54:15 / 修改时间：14:04:53" itemprop="dateCreated datePublished" datetime="2019-07-15T13:54:15+08:00">2019-07-15</time>
+              <time title="创建时间：2019-07-15 13:54:15" itemprop="dateCreated datePublished" datetime="2019-07-15T13:54:15+08:00">2019-07-15</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-16 17:07:55" itemprop="dateModified" datetime="2019-07-16T17:07:55+08:00">2019-07-16</time>
+              </span>
             
           
 
@@ -713,14 +1049,23 @@
       
         
           
-            <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
-<li><p>创建新文章<br><code>hexo new post title</code></p>
+            <h2 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="headerlink" title="&#x5E38;&#x7528;&#x547D;&#x4EE4;"></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2><ol>
+<li><p>&#x521B;&#x5EFA;&#x65B0;&#x6587;&#x7AE0;<br><code>hexo new post title</code></p>
 </li>
-<li><p>本地运行<br><code>hexo s</code></p>
+<li><p>&#x672C;&#x5730;&#x8FD0;&#x884C;<br><code>hexo s</code></p>
 </li>
-<li><p>生成静态文件<br><code>hexo g</code></p>
+<li><p>&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;<br><code>hexo g</code></p>
 </li>
 </ol>
+<h2 id="hexo&#x63D2;&#x4EF6;"><a href="#hexo&#x63D2;&#x4EF6;" class="headerlink" title="hexo&#x63D2;&#x4EF6;"></a>hexo&#x63D2;&#x4EF6;</h2><ol>
+<li>&#x672C;&#x5730;&#x4E0A;&#x4F20;&#x56FE;&#x7247; <code>hexo-asset-image ^0.0.1</code> </li>
+</ol>
+<p>0.0.1&#x7248;&#x672C;&#x53EF;&#x7528;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;1.0.0&#x7248;&#x672C;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x9519;&#x8BEF;&#x3002;</p>
+<ol start="2">
+<li>&#x4EE3;&#x7801;&#x9AD8;&#x4EAE; <code>highlight.js</code></li>
+</ol>
+<p>&#x5F15;&#x5165;js&#x548C;css&#x5728;&#x8DEF;&#x5F84; <code>themes\next\layout\_partials\head\head.swig</code> &#x548C; <code>themes\next\layout\_partials\footer.swig</code> &#x4E0B;&#x3002;<br></p>
+<p>&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;padding&#x8BBE;&#x7F6E;&#x5728;<code>themes\next\source\css\_common\components\highlight\highlight.styl</code>&#x4E0B;</p>
 
           
         
@@ -871,17 +1216,13 @@
         
           
             <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
           
@@ -968,7 +1309,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -989,7 +1330,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1052,6 +1395,10 @@
 
 
 
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
         
 
 

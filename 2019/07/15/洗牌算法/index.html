@@ -93,19 +93,22 @@
   };
 </script>
 
+<link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.15.8/styles/vs2015.min.css">
+<script src="//cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
 
 
-  <meta name="description" content="什么是洗牌算法所谓洗牌算法，就是给你一个1到n的序列，让你随机打乱，保证每个数出现在任意一个位置的概率相同，也就是说在n!个的排列中，每一个排列出现的概率相同。 算法思路每次随机选出一个没有被选过的数放到一个队列中，如果随机出来的数已经被选过，那么继续随机直到遇到一个没有被选过的数放入到队列中；重复这样子操作直到所有的数都被选择出来。首先选第一个数的时候有n个数可选，第2个数的时候有(n-1)个数">
+
+  <meta name="description" content="&amp;#x4EC0;&amp;#x4E48;&amp;#x662F;&amp;#x6D17;&amp;#x724C;&amp;#x7B97;&amp;#x6CD5;&amp;#x6240;&amp;#x8C13;&amp;#x6D17;&amp;#x724C;&amp;#x7B97;&amp;#x6CD5;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x7ED9;&amp;#x4F60;&amp;#x4E00;&amp;#x4E2A;1&amp;#x5230;n&amp;#x7684;&amp;#x5E8F;&amp;#x5217;&amp;#xFF0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="洗牌算法">
 <meta property="og:url" content="http://yoursite.com/2019/07/15/洗牌算法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="什么是洗牌算法所谓洗牌算法，就是给你一个1到n的序列，让你随机打乱，保证每个数出现在任意一个位置的概率相同，也就是说在n!个的排列中，每一个排列出现的概率相同。 算法思路每次随机选出一个没有被选过的数放到一个队列中，如果随机出来的数已经被选过，那么继续随机直到遇到一个没有被选过的数放入到队列中；重复这样子操作直到所有的数都被选择出来。首先选第一个数的时候有n个数可选，第2个数的时候有(n-1)个数">
+<meta property="og:description" content="&amp;#x4EC0;&amp;#x4E48;&amp;#x662F;&amp;#x6D17;&amp;#x724C;&amp;#x7B97;&amp;#x6CD5;&amp;#x6240;&amp;#x8C13;&amp;#x6D17;&amp;#x724C;&amp;#x7B97;&amp;#x6CD5;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x7ED9;&amp;#x4F60;&amp;#x4E00;&amp;#x4E2A;1&amp;#x5230;n&amp;#x7684;&amp;#x5E8F;&amp;#x5217;&amp;#xFF0">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-15T06:19:21.557Z">
+<meta property="og:updated_time" content="2019-07-16T09:51:05.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="洗牌算法">
-<meta name="twitter:description" content="什么是洗牌算法所谓洗牌算法，就是给你一个1到n的序列，让你随机打乱，保证每个数出现在任意一个位置的概率相同，也就是说在n!个的排列中，每一个排列出现的概率相同。 算法思路每次随机选出一个没有被选过的数放到一个队列中，如果随机出来的数已经被选过，那么继续随机直到遇到一个没有被选过的数放入到队列中；重复这样子操作直到所有的数都被选择出来。首先选第一个数的时候有n个数可选，第2个数的时候有(n-1)个数">
+<meta name="twitter:description" content="&amp;#x4EC0;&amp;#x4E48;&amp;#x662F;&amp;#x6D17;&amp;#x724C;&amp;#x7B97;&amp;#x6CD5;&amp;#x6240;&amp;#x8C13;&amp;#x6D17;&amp;#x724C;&amp;#x7B97;&amp;#x6CD5;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x7ED9;&amp;#x4F60;&amp;#x4E00;&amp;#x4E2A;1&amp;#x5230;n&amp;#x7684;&amp;#x5E8F;&amp;#x5217;&amp;#xFF0">
 
 
 
@@ -357,13 +360,23 @@
                 
               
 
-              <time title="创建时间：2019-07-15 14:15:08 / 修改时间：14:19:21" itemprop="dateCreated datePublished" datetime="2019-07-15T14:15:08+08:00">2019-07-15</time>
+              <time title="创建时间：2019-07-15 14:15:08" itemprop="dateCreated datePublished" datetime="2019-07-15T14:15:08+08:00">2019-07-15</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-16 17:51:05" itemprop="dateModified" datetime="2019-07-16T17:51:05+08:00">2019-07-16</time>
+              </span>
             
           
 
@@ -401,10 +414,38 @@
       
 
       
-        <h2 id="什么是洗牌算法"><a href="#什么是洗牌算法" class="headerlink" title="什么是洗牌算法"></a>什么是洗牌算法</h2><p>所谓洗牌算法，就是给你一个1到n的序列，让你随机打乱，保证每个数出现在任意一个位置的概率相同，也就是说在n!个的排列中，每一个排列出现的概率相同。</p>
-<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>每次随机选出一个没有被选过的数放到一个队列中，如果随机出来的数已经被选过，那么继续随机直到遇到一个没有被选过的数放入到队列中；重复这样子操作直到所有的数都被选择出来。<br>首先选第一个数的时候有n个数可选，第2个数的时候有(n-1)个数可选，—–这样子看来我们的排列有n(n-1)(n-2)—–1种，也就是我们最后选出来的排列是n!的排列中的任意一个，这样子显然是符合随机洗牌的要求的。<br>但是我们反观该方法的时间复杂度，由于我们每次随机选出一个数都有可能是之前选过的数，需要进行再次随机，因此对选出一个数的随机平均情况下需要随机O(n)次，因此该方法的时间复杂度是O(n^2)的。而且另外还要记一个队列，甚至需要记一个数是否被选出来过，因此该最朴素的做法的时间和空间复杂度都不是最好的，我们需要考虑更好的办法。</p>
-<h2 id="取出交换解法"><a href="#取出交换解法" class="headerlink" title="取出交换解法"></a>取出交换解法</h2><p>用交换位置的办法，每次从余下的牌堆中随机取出一张牌放到牌堆尾，即与牌堆最后一张牌交换位置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function shuffle(num)&#123;</span><br><span class="line">    let poker = [];</span><br><span class="line">    for(let i=1;i&lt;=num;i++)&#123;</span><br><span class="line">        poker.push(i)</span><br><span class="line">    &#125;</span><br><span class="line">    for (let j=poker.length;j&gt;0;j--)&#123;</span><br><span class="line">        let select = rand(j);</span><br><span class="line">        swap(poker,select-1,j-1);</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(poker)</span><br><span class="line">    return poker;</span><br><span class="line">&#125;</span><br><span class="line">var rand = (function()&#123;</span><br><span class="line">    var seed = (new Date()).getTime()</span><br><span class="line">    function r()&#123;</span><br><span class="line">        seed = (seed*9301+49297)%233280</span><br><span class="line">        return seed/(233280.0)</span><br><span class="line">    &#125;</span><br><span class="line">    return function(number)&#123;</span><br><span class="line">        return Math.ceil(r()*number)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line">function swap(arr,first,second)&#123;</span><br><span class="line">    let temp = arr[first]</span><br><span class="line">    arr[first] = arr[second]</span><br><span class="line">    arr[second] = temp;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line">shuffle(54);</span><br></pre></td></tr></table></figure>
+        <h2 id="&#x4EC0;&#x4E48;&#x662F;&#x6D17;&#x724C;&#x7B97;&#x6CD5;"><a href="#&#x4EC0;&#x4E48;&#x662F;&#x6D17;&#x724C;&#x7B97;&#x6CD5;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;&#x6D17;&#x724C;&#x7B97;&#x6CD5;"></a>&#x4EC0;&#x4E48;&#x662F;&#x6D17;&#x724C;&#x7B97;&#x6CD5;</h2><p>&#x6240;&#x8C13;&#x6D17;&#x724C;&#x7B97;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;1&#x5230;n&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x8BA9;&#x4F60;&#x968F;&#x673A;&#x6253;&#x4E71;&#xFF0C;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A;&#x6570;&#x51FA;&#x73B0;&#x5728;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x6982;&#x7387;&#x76F8;&#x540C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5728;n!&#x4E2A;&#x7684;&#x6392;&#x5217;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x6392;&#x5217;&#x51FA;&#x73B0;&#x7684;&#x6982;&#x7387;&#x76F8;&#x540C;&#x3002;</p>
+<h2 id="&#x7B97;&#x6CD5;&#x601D;&#x8DEF;"><a href="#&#x7B97;&#x6CD5;&#x601D;&#x8DEF;" class="headerlink" title="&#x7B97;&#x6CD5;&#x601D;&#x8DEF;"></a>&#x7B97;&#x6CD5;&#x601D;&#x8DEF;</h2><p>&#x6BCF;&#x6B21;&#x968F;&#x673A;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x88AB;&#x9009;&#x8FC7;&#x7684;&#x6570;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x968F;&#x673A;&#x51FA;&#x6765;&#x7684;&#x6570;&#x5DF2;&#x7ECF;&#x88AB;&#x9009;&#x8FC7;&#xFF0C;&#x90A3;&#x4E48;&#x7EE7;&#x7EED;&#x968F;&#x673A;&#x76F4;&#x5230;&#x9047;&#x5230;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x88AB;&#x9009;&#x8FC7;&#x7684;&#x6570;&#x653E;&#x5165;&#x5230;&#x961F;&#x5217;&#x4E2D;&#xFF1B;&#x91CD;&#x590D;&#x8FD9;&#x6837;&#x5B50;&#x64CD;&#x4F5C;&#x76F4;&#x5230;&#x6240;&#x6709;&#x7684;&#x6570;&#x90FD;&#x88AB;&#x9009;&#x62E9;&#x51FA;&#x6765;&#x3002;<br>&#x9996;&#x5148;&#x9009;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x65F6;&#x5019;&#x6709;n&#x4E2A;&#x6570;&#x53EF;&#x9009;&#xFF0C;&#x7B2C;2&#x4E2A;&#x6570;&#x7684;&#x65F6;&#x5019;&#x6709;(n-1)&#x4E2A;&#x6570;&#x53EF;&#x9009;&#xFF0C;&#x2014;&#x2013;&#x8FD9;&#x6837;&#x5B50;&#x770B;&#x6765;&#x6211;&#x4EEC;&#x7684;&#x6392;&#x5217;&#x6709;n(n-1)(n-2)&#x2014;&#x2013;1&#x79CD;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x6700;&#x540E;&#x9009;&#x51FA;&#x6765;&#x7684;&#x6392;&#x5217;&#x662F;n!&#x7684;&#x6392;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#xFF0C;&#x8FD9;&#x6837;&#x5B50;&#x663E;&#x7136;&#x662F;&#x7B26;&#x5408;&#x968F;&#x673A;&#x6D17;&#x724C;&#x7684;&#x8981;&#x6C42;&#x7684;&#x3002;<br>&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x53CD;&#x89C2;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x968F;&#x673A;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#x90FD;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x4E4B;&#x524D;&#x9009;&#x8FC7;&#x7684;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x518D;&#x6B21;&#x968F;&#x673A;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x968F;&#x673A;&#x5E73;&#x5747;&#x60C5;&#x51B5;&#x4E0B;&#x9700;&#x8981;&#x968F;&#x673A;O(n)&#x6B21;&#xFF0C;&#x56E0;&#x6B64;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;O(n^2)&#x7684;&#x3002;&#x800C;&#x4E14;&#x53E6;&#x5916;&#x8FD8;&#x8981;&#x8BB0;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x751A;&#x81F3;&#x9700;&#x8981;&#x8BB0;&#x4E00;&#x4E2A;&#x6570;&#x662F;&#x5426;&#x88AB;&#x9009;&#x51FA;&#x6765;&#x8FC7;&#xFF0C;&#x56E0;&#x6B64;&#x8BE5;&#x6700;&#x6734;&#x7D20;&#x7684;&#x505A;&#x6CD5;&#x7684;&#x65F6;&#x95F4;&#x548C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x4E0D;&#x662F;&#x6700;&#x597D;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8003;&#x8651;&#x66F4;&#x597D;&#x7684;&#x529E;&#x6CD5;&#x3002;</p>
+<h2 id="&#x53D6;&#x51FA;&#x4EA4;&#x6362;&#x89E3;&#x6CD5;"><a href="#&#x53D6;&#x51FA;&#x4EA4;&#x6362;&#x89E3;&#x6CD5;" class="headerlink" title="&#x53D6;&#x51FA;&#x4EA4;&#x6362;&#x89E3;&#x6CD5;"></a>&#x53D6;&#x51FA;&#x4EA4;&#x6362;&#x89E3;&#x6CD5;</h2><p>&#x7528;&#x4EA4;&#x6362;&#x4F4D;&#x7F6E;&#x7684;&#x529E;&#x6CD5;&#xFF0C;&#x6BCF;&#x6B21;&#x4ECE;&#x4F59;&#x4E0B;&#x7684;&#x724C;&#x5806;&#x4E2D;&#x968F;&#x673A;&#x53D6;&#x51FA;&#x4E00;&#x5F20;&#x724C;&#x653E;&#x5230;&#x724C;&#x5806;&#x5C3E;&#xFF0C;&#x5373;&#x4E0E;&#x724C;&#x5806;&#x6700;&#x540E;&#x4E00;&#x5F20;&#x724C;&#x4EA4;&#x6362;&#x4F4D;&#x7F6E;&#x3002;</p>
+<pre><code>function shuffle(num){
+    let poker = [];
+    for(let i=1;i&lt;=num;i++){
+        poker.push(i)
+    }
+    for (let j=poker.length;j&gt;0;j--){
+        let select = rand(j);
+        swap(poker,select-1,j-1);
+    }
+    console.log(poker)
+    return poker;
+}
+var rand = (function(){
+    var seed = (new Date()).getTime()
+    function r(){
+        seed = (seed*9301+49297)%233280
+        return seed/(233280.0)
+    }
+    return function(number){
+        return Math.ceil(r()*number)
+    }
+})()
+function swap(arr,first,second){
+    let temp = arr[first]
+    arr[first] = arr[second]
+    arr[second] = temp;
+    return arr;
+}
+shuffle(54);</code></pre>
       
     </div>
 
@@ -519,7 +560,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -540,7 +581,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -620,6 +663,10 @@
 
 
 
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
         
 
 

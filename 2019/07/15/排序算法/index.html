@@ -93,19 +93,22 @@
   };
 </script>
 
+<link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.15.8/styles/vs2015.min.css">
+<script src="//cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
 
 
-  <meta name="description" content="插入排序插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。 算法步骤：1.将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。2.从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。">
+
+  <meta name="description" content="&amp;#x63D2;&amp;#x5165;&amp;#x6392;&amp;#x5E8F;&amp;#x63D2;&amp;#x5165;&amp;#x6392;&amp;#x5E8F;&amp;#x662F;&amp;#x4E00;&amp;#x79CD;&amp;#x6700;&amp;#x7B80;&amp;#x5355;&amp;#x76F4;&amp;#x89C2;&amp;#x7684;&amp;#x6392;&amp;#x5E8F;&amp;#x7B97;&amp;#x6CD5;&amp;#xFF0C;&amp;#x5B83;&amp;#x7684;&amp;#x5DE5;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序算法">
 <meta property="og:url" content="http://yoursite.com/2019/07/15/排序算法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="插入排序插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。 算法步骤：1.将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。2.从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。">
+<meta property="og:description" content="&amp;#x63D2;&amp;#x5165;&amp;#x6392;&amp;#x5E8F;&amp;#x63D2;&amp;#x5165;&amp;#x6392;&amp;#x5E8F;&amp;#x662F;&amp;#x4E00;&amp;#x79CD;&amp;#x6700;&amp;#x7B80;&amp;#x5355;&amp;#x76F4;&amp;#x89C2;&amp;#x7684;&amp;#x6392;&amp;#x5E8F;&amp;#x7B97;&amp;#x6CD5;&amp;#xFF0C;&amp;#x5B83;&amp;#x7684;&amp;#x5DE5;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-07-15T06:22:31.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序算法">
-<meta name="twitter:description" content="插入排序插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。 算法步骤：1.将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。2.从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。">
+<meta name="twitter:description" content="&amp;#x63D2;&amp;#x5165;&amp;#x6392;&amp;#x5E8F;&amp;#x63D2;&amp;#x5165;&amp;#x6392;&amp;#x5E8F;&amp;#x662F;&amp;#x4E00;&amp;#x79CD;&amp;#x6700;&amp;#x7B80;&amp;#x5355;&amp;#x76F4;&amp;#x89C2;&amp;#x7684;&amp;#x6392;&amp;#x5E8F;&amp;#x7B97;&amp;#x6CD5;&amp;#xFF0C;&amp;#x5B83;&amp;#x7684;&amp;#x5DE5;">
 
 
 
@@ -401,17 +404,48 @@
       
 
       
-        <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序是一种最简单直观的排序算法，它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
-<h3 id="算法步骤："><a href="#算法步骤：" class="headerlink" title="算法步骤："></a>算法步骤：</h3><p>1.将第一待排序序列第一个元素看做一个有序序列，把第二个元素到最后一个元素当成是未排序序列。<br>2.从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,84,16,78,34,21,47,93,52,56,83,26]</span><br><span class="line">    for(let i=1;i&lt;arr.length;i++)&#123;</span><br><span class="line">        if(arr[i]&lt;arr[i-1])&#123;</span><br><span class="line">            let x = arr[i];</span><br><span class="line">            arr[i] = arr[i-1]</span><br><span class="line">            let j = i-1;</span><br><span class="line">            while(x&lt;arr[j])&#123;</span><br><span class="line">                arr[j+1] = arr[j]</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            arr[j+1] = x;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(arr);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h2><p>在要排序的一组数中，选出最小（或者最大）的一个数与第1个位置的数交换；然后在剩下的数当中再找最小（或者最大）的与第2个位置的数交换，依次类推，直到第n-1个元素（倒数第二个数）和第n个元素（最后一个数）比较为止。</p>
-<h3 id="算法步骤：-1"><a href="#算法步骤：-1" class="headerlink" title="算法步骤："></a>算法步骤：</h3><p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。<br>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。<br>重复第二步，直到所有元素均排序完毕。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,84,16,78,34,21,47,93,52,56,83,26]</span><br><span class="line">    for(let i=0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">        let k = arr[i];</span><br><span class="line">        let l = i;</span><br><span class="line">        for(let j=i;j&lt;arr.length-1;j++)&#123;</span><br><span class="line">            if(k&gt;arr[j+1]) &#123;</span><br><span class="line">                k=arr[j+1];</span><br><span class="line">                l=j+1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr,i,l);</span><br><span class="line">        console.log(arr)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="冒泡排序："><a href="#冒泡排序：" class="headerlink" title="冒泡排序："></a>冒泡排序：</h2><p>冒泡排序（Bubble Sort）也是一种简单直观的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
-<h3 id="算法步骤：-2"><a href="#算法步骤：-2" class="headerlink" title="算法步骤："></a>算法步骤：</h3><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。<br>针对所有的元素重复以上的步骤，除了最后一个。<br>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2,84,16,78,34,21,47,93,52,56,83,26]</span><br><span class="line">    for(let i=0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">        for(let j=0;j&lt;arr.length-i;j++)&#123;</span><br><span class="line">            if(arr[j]&gt;arr[j+1])&#123;</span><br><span class="line">                let temp = arr[j]</span><br><span class="line">                arr[j] = arr[j+1]</span><br><span class="line">                arr[j+1] = temp</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(arr);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="&#x63D2;&#x5165;&#x6392;&#x5E8F;"><a href="#&#x63D2;&#x5165;&#x6392;&#x5E8F;" class="headerlink" title="&#x63D2;&#x5165;&#x6392;&#x5E8F;"></a>&#x63D2;&#x5165;&#x6392;&#x5E8F;</h2><p>&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x662F;&#x4E00;&#x79CD;&#x6700;&#x7B80;&#x5355;&#x76F4;&#x89C2;&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#xFF0C;&#x5B83;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x662F;&#x901A;&#x8FC7;&#x6784;&#x5EFA;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#xFF0C;&#x5BF9;&#x4E8E;&#x672A;&#x6392;&#x5E8F;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x5DF2;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x4E2D;&#x4ECE;&#x540E;&#x5411;&#x524D;&#x626B;&#x63CF;&#xFF0C;&#x627E;&#x5230;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x5E76;&#x63D2;&#x5165;&#x3002;</p>
+<h3 id="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;"><a href="#&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;" class="headerlink" title="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;"></a>&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;</h3><p>1.&#x5C06;&#x7B2C;&#x4E00;&#x5F85;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x770B;&#x505A;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#xFF0C;&#x628A;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5F53;&#x6210;&#x662F;&#x672A;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x3002;<br>2.&#x4ECE;&#x5934;&#x5230;&#x5C3E;&#x4F9D;&#x6B21;&#x626B;&#x63CF;&#x672A;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#xFF0C;&#x5C06;&#x626B;&#x63CF;&#x5230;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#x7684;&#x9002;&#x5F53;&#x4F4D;&#x7F6E;&#x3002;&#xFF08;&#x5982;&#x679C;&#x5F85;&#x63D2;&#x5165;&#x7684;&#x5143;&#x7D20;&#x4E0E;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#x76F8;&#x7B49;&#xFF0C;&#x5219;&#x5C06;&#x5F85;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x76F8;&#x7B49;&#x5143;&#x7D20;&#x7684;&#x540E;&#x9762;&#x3002;&#xFF09;</p>
+<pre><code>let arr = [2,84,16,78,34,21,47,93,52,56,83,26]
+    for(let i=1;i&lt;arr.length;i++){
+        if(arr[i]&lt;arr[i-1]){
+            let x = arr[i];
+            arr[i] = arr[i-1]
+            let j = i-1;
+            while(x&lt;arr[j]){
+                arr[j+1] = arr[j]
+                j--;
+            }
+            arr[j+1] = x;
+        }
+        console.log(arr);
+    }</code></pre><h2 id="&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;"><a href="#&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;" class="headerlink" title="&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;"></a>&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;</h2><p>&#x5728;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x4E00;&#x7EC4;&#x6570;&#x4E2D;&#xFF0C;&#x9009;&#x51FA;&#x6700;&#x5C0F;&#xFF08;&#x6216;&#x8005;&#x6700;&#x5927;&#xFF09;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x4E0E;&#x7B2C;1&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x4EA4;&#x6362;&#xFF1B;&#x7136;&#x540E;&#x5728;&#x5269;&#x4E0B;&#x7684;&#x6570;&#x5F53;&#x4E2D;&#x518D;&#x627E;&#x6700;&#x5C0F;&#xFF08;&#x6216;&#x8005;&#x6700;&#x5927;&#xFF09;&#x7684;&#x4E0E;&#x7B2C;2&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x4EA4;&#x6362;&#xFF0C;&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#xFF0C;&#x76F4;&#x5230;&#x7B2C;n-1&#x4E2A;&#x5143;&#x7D20;&#xFF08;&#x5012;&#x6570;&#x7B2C;&#x4E8C;&#x4E2A;&#x6570;&#xFF09;&#x548C;&#x7B2C;n&#x4E2A;&#x5143;&#x7D20;&#xFF08;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#xFF09;&#x6BD4;&#x8F83;&#x4E3A;&#x6B62;&#x3002;</p>
+<h3 id="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;-1"><a href="#&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;-1" class="headerlink" title="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;"></a>&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;</h3><p>&#x9996;&#x5148;&#x5728;&#x672A;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x4E2D;&#x627E;&#x5230;&#x6700;&#x5C0F;&#xFF08;&#x5927;&#xFF09;&#x5143;&#x7D20;&#xFF0C;&#x5B58;&#x653E;&#x5230;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x3002;<br>&#x518D;&#x4ECE;&#x5269;&#x4F59;&#x672A;&#x6392;&#x5E8F;&#x5143;&#x7D20;&#x4E2D;&#x7EE7;&#x7EED;&#x5BFB;&#x627E;&#x6700;&#x5C0F;&#xFF08;&#x5927;&#xFF09;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x653E;&#x5230;&#x5DF2;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x7684;&#x672B;&#x5C3E;&#x3002;<br>&#x91CD;&#x590D;&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x76F4;&#x5230;&#x6240;&#x6709;&#x5143;&#x7D20;&#x5747;&#x6392;&#x5E8F;&#x5B8C;&#x6BD5;&#x3002;</p>
+<pre><code>let arr = [2,84,16,78,34,21,47,93,52,56,83,26]
+    for(let i=0;i&lt;arr.length-1;i++){
+        let k = arr[i];
+        let l = i;
+        for(let j=i;j&lt;arr.length-1;j++){
+            if(k&gt;arr[j+1]) {
+                k=arr[j+1];
+                l=j+1;
+            }
+        }
+        swap(arr,i,l);
+        console.log(arr)
+    }</code></pre><h2 id="&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF1A;"><a href="#&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF1A;" class="headerlink" title="&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF1A;"></a>&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF1A;</h2><p>&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF08;Bubble Sort&#xFF09;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x76F4;&#x89C2;&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x3002;&#x5B83;&#x91CD;&#x590D;&#x5730;&#x8D70;&#x8BBF;&#x8FC7;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x6570;&#x5217;&#xFF0C;&#x4E00;&#x6B21;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5982;&#x679C;&#x4ED6;&#x4EEC;&#x7684;&#x987A;&#x5E8F;&#x9519;&#x8BEF;&#x5C31;&#x628A;&#x4ED6;&#x4EEC;&#x4EA4;&#x6362;&#x8FC7;&#x6765;&#x3002;&#x8D70;&#x8BBF;&#x6570;&#x5217;&#x7684;&#x5DE5;&#x4F5C;&#x662F;&#x91CD;&#x590D;&#x5730;&#x8FDB;&#x884C;&#x76F4;&#x5230;&#x6CA1;&#x6709;&#x518D;&#x9700;&#x8981;&#x4EA4;&#x6362;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8BE5;&#x6570;&#x5217;&#x5DF2;&#x7ECF;&#x6392;&#x5E8F;&#x5B8C;&#x6210;&#x3002;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x7684;&#x540D;&#x5B57;&#x7531;&#x6765;&#x662F;&#x56E0;&#x4E3A;&#x8D8A;&#x5C0F;&#x7684;&#x5143;&#x7D20;&#x4F1A;&#x7ECF;&#x7531;&#x4EA4;&#x6362;&#x6162;&#x6162;&#x201C;&#x6D6E;&#x201D;&#x5230;&#x6570;&#x5217;&#x7684;&#x9876;&#x7AEF;&#x3002;</p>
+<h3 id="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;-2"><a href="#&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;-2" class="headerlink" title="&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;"></a>&#x7B97;&#x6CD5;&#x6B65;&#x9AA4;&#xFF1A;</h3><p>&#x6BD4;&#x8F83;&#x76F8;&#x90BB;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x6BD4;&#x7B2C;&#x4E8C;&#x4E2A;&#x5927;&#xFF0C;&#x5C31;&#x4EA4;&#x6362;&#x4ED6;&#x4EEC;&#x4E24;&#x4E2A;&#x3002;<br>&#x5BF9;&#x6BCF;&#x4E00;&#x5BF9;&#x76F8;&#x90BB;&#x5143;&#x7D20;&#x4F5C;&#x540C;&#x6837;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4ECE;&#x5F00;&#x59CB;&#x7B2C;&#x4E00;&#x5BF9;&#x5230;&#x7ED3;&#x5C3E;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5BF9;&#x3002;&#x8FD9;&#x6B65;&#x505A;&#x5B8C;&#x540E;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x5143;&#x7D20;&#x4F1A;&#x662F;&#x6700;&#x5927;&#x7684;&#x6570;&#x3002;<br>&#x9488;&#x5BF9;&#x6240;&#x6709;&#x7684;&#x5143;&#x7D20;&#x91CD;&#x590D;&#x4EE5;&#x4E0A;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x9664;&#x4E86;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x3002;<br>&#x6301;&#x7EED;&#x6BCF;&#x6B21;&#x5BF9;&#x8D8A;&#x6765;&#x8D8A;&#x5C11;&#x7684;&#x5143;&#x7D20;&#x91CD;&#x590D;&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x76F4;&#x5230;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4E00;&#x5BF9;&#x6570;&#x5B57;&#x9700;&#x8981;&#x6BD4;&#x8F83;&#x3002;</p>
+<pre><code>let arr = [2,84,16,78,34,21,47,93,52,56,83,26]
+    for(let i=0;i&lt;arr.length-1;i++){
+        for(let j=0;j&lt;arr.length-i;j++){
+            if(arr[j]&gt;arr[j+1]){
+                let temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+            }
+        }
+        console.log(arr);
+    }</code></pre>
       
     </div>
 
@@ -454,6 +488,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/16/Vue全局调用对话框/" rel="prev" title="Vue全局调用对话框">
+                Vue全局调用对话框 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -522,7 +560,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -543,7 +581,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -623,6 +663,10 @@
 
 
 
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
         
 
 

@@ -522,6 +522,7 @@ pre code {
   color: #4d4d4c;
   background: none;
   text-shadow: none;
+  padding: 15px 25px !important;
 }
 .highlight *::selection {
   background: #d6d6d6;
@@ -1701,7 +1702,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffa486;
+  background: #e2856b;
 }
 .feed-link,
 .chat {
